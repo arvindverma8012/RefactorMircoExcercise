@@ -51,8 +51,8 @@
     <Compile Include="TirePressureMonitoringSystem\Interfaces\ISensor.cs" />
     <Compile Include="TirePressureMonitoringSystem\Sensor.cs" />
     <Compile Include="TurnTicketDispenser\Interface\ITicketDispenser.cs" />
-    <Compile Include="TurnTicketDispenser\Interface\ISequenceWrapper.cs" />
-    <Compile Include="TurnTicketDispenser\Interface\SequenceWrapper.cs" />
+    <Compile Include="TurnTicketDispenser\Interface\ITurnNumberSequenceWrapper.cs" />
+    <Compile Include="TurnTicketDispenser\TurnNumberSequenceWrapper.cs" />
     <Compile Include="TurnTicketDispenser\TicketDispenser.cs" />
     <Compile Include="TurnTicketDispenser\TurnNumberSequence.cs" />
     <Compile Include="TurnTicketDispenser\TurnTicket.cs" />

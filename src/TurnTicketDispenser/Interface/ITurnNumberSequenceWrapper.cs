@@ -1,8 +1,7 @@
 ﻿
-
 namespace TDDMicroExercises.TurnTicketDispenser.Interface
 {
-    public interface ISequenceWrapper
+    public interface ITurnNumberSequenceWrapper
     {
         int GetNextTurnNumber();
     }

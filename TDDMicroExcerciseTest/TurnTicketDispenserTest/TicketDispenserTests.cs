@@ -6,13 +6,11 @@ namespace TDDMicroExcerciseTest.TurnTicketDispenserTest
 {
     public class TicketDispenserTests
     {
-        public readonly Mock<ISequenceWrapper> _sequenceMock;
-        public readonly Mock<ITicketDispenser> _ticketDispenserMock;
+        public readonly Mock<ITurnNumberSequenceWrapper> _sequenceMock;
 
         public TicketDispenserTests()
         {
-            _sequenceMock = new Mock<ISequenceWrapper>();
-            _ticketDispenserMock = new Mock<ITicketDispenser>();
+            _sequenceMock = new Mock<ITurnNumberSequenceWrapper>();
         }
         [Fact]
             public void GetTurnTicket_ReturnsIncrementedTurnNumber()
@@ -23,7 +21,7 @@ namespace TDDMicroExcerciseTest.TurnTicketDispenserTest
                 _sequenceMock.Setup(s=>s.GetNextTurnNumber()).Returns(expected);
 
                 // Act
-                TurnTicket turnTicket = ticketDispenser.GetTurnTicket();
+                var turnTicket = ticketDispenser.GetTurnTicket();
 
                 // Assert
                 Assert.Equal(expected, turnTicket.TurnNumber);
@@ -31,7 +29,7 @@ namespace TDDMicroExcerciseTest.TurnTicketDispenserTest
 
         private ITicketDispenser TicketDispenserService()
         {
-            return new TicketDispenser();
+            return new TicketDispenser(_sequenceMock.Object);
         }
 
     }
